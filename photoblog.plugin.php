@@ -117,8 +117,8 @@ class Photoblog extends Plugin
 	
 	public function add_controls( $form )
 	{
-		$form->publish_controls->insert('tagselector', 'fieldset', 'pb_description', _t('Description'));
-		$form->publish_controls->pb_description->append($form->content);
+		$form->insert('tags', 'fieldset', 'pb_description', _t('Description'));
+		$form->content->move_into($form->pb_description);
 		
 		$form->content->caption = _t('Description');
 		$form->content->tabindex = 4;
@@ -131,8 +131,8 @@ class Photoblog extends Plugin
 		$form->append('marqueetool', 'pb_thumbnail', 'null:null', _t('Thumbnail'), 'formcontrol_marqueetool');
 		$form->move_after( $form->pb_thumbnail, $form->pb_wrapper );
 		
-		$form->publish_controls->settings->append('checkbox', 'pb_refresh', 'null:null', _t('Refresh photo and thumbnail'), 'tabcontrol_checkbox');
-		$form->publish_controls->settings->append('checkbox', 'pb_savephoto', 'null:null', _t('Save a local copy of the photo'), 'tabcontrol_checkbox');
+		$form->settings->append('checkbox', 'pb_refresh', 'null:null', _t('Refresh photo and thumbnail'), 'tabcontrol_checkbox');
+		$form->settings->append('checkbox', 'pb_savephoto', 'null:null', _t('Save a local copy of the photo'), 'tabcontrol_checkbox');
 
 		return $form;
 	}
