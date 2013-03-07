@@ -7,18 +7,6 @@ class Photoblog extends Plugin
 {
 	
 	private static $folder_chmod = 0755; // For paranoids!
-
-	public function info()
-	{
-		return array (
-			'name' => 'Photoblog',
-			'author' => 'Habari Community',
-			'authorurl' => 'http://habariproject.org/',
-			'version' => '0.1',
-			'description' => 'Adds features needed to create a photoblog.',
-			'license' => 'Apache License 2.0',
-		);
-	}
 	
 	public function action_plugin_activation( $plugin_file )
 	{
